@@ -1,7 +1,7 @@
 <?php
-
 use yii\helpers\Html;
 use yii\grid\GridView;
+use rmrevin\yii\fontawesome\FA;
 
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\SuperbaseSearch */
@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('新增超级基站', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('导出为Excel', ['excel'], ['class' => 'btn btn-info']) ?>
+        <?= Html::a(FA::icon('plus').' 新增超级基站', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(FA::icon('file-excel-o').' 导出为Excel', ['excel'], ['class' => 'btn btn-info']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

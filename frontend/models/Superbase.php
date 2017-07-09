@@ -43,10 +43,10 @@ class Superbase extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'city' => 'City',
-            'area' => 'Area',
-            'name' => 'Name',
-            'manu' => 'Manu',
+            'city' => '地市',
+            'area' => '县区',
+            'name' => '基站名称',
+            'manu' => '厂家',
         ];
     }
 }
