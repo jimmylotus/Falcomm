@@ -54,7 +54,6 @@ class SuperbaseController extends Controller
         $objectPHPExcel->getActiveSheet()->SetCellValue('C1', '基站名称');
         $objectPHPExcel->getActiveSheet()->SetCellValue('D1', '厂家');
         $i=1;
-        echo "TEST";
         foreach ($datas as $data) {
             $i = $i+1;
             $objectPHPExcel->getActiveSheet()->SetCellValue('A'.$i, $data->city);
@@ -64,7 +63,7 @@ class SuperbaseController extends Controller
         }
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition:attachment;filename="'.'信息导出-'.date("Y年m月j日").'.xlsx"');
-        $objWriter = PHPExcel_IOFactory::createWriter($objectPHPExcel, 'Excel2007');
+        $objWriter = \ PHPExcel_IOFactory::createWriter($objectPHPExcel, 'Excel2007');
         $objWriter->save('php://output');
 
         /*$searchModel = new SuperbaseSearch();
