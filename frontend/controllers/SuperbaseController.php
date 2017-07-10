@@ -43,7 +43,7 @@ class SuperbaseController extends Controller
         ]);
     }
 
-    public function actionExcel()
+    public function actionExcel($title)
     {
 
         $objectPHPExcel = new \PHPExcel();
@@ -62,7 +62,7 @@ class SuperbaseController extends Controller
             $objectPHPExcel->getActiveSheet()->SetCellValue('D'.$i, $data->manu);
         }
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition:attachment;filename="'.'信息导出-'.date("Y年m月j日").'.xlsx"');
+        header('Content-Disposition:attachment;filename="'.'信息导出-'.$title.'.xlsx"');
         $objWriter = \ PHPExcel_IOFactory::createWriter($objectPHPExcel, 'Excel2007');
         $objWriter->save('php://output');
 

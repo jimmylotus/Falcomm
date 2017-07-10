@@ -4,6 +4,10 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\superbase;
 
+/* @var $this yii\web\View */
+/* @var $searchModel frontend\models\SuperbaseSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
 $objectPHPExcel = new PHPExcel();
 $objectPHPExcel->setActiveSheetIndex(0);
 $datas = superbase::find()->all();

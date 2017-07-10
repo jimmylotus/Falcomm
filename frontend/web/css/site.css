@@ -2,7 +2,7 @@ html,
 body {
     height: 100%;
 }
-
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
 .wrap {
     min-height: 100%;
     height: auto;
@@ -117,4 +117,16 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.exceed-index table {
+    width: 768px !important;
+}
+.exceed-index td {
+    word-wrap: break-word;
+    overflow:hidden;
 }

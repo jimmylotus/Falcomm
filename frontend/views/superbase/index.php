@@ -6,7 +6,7 @@ use rmrevin\yii\fontawesome\FA;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\SuperbaseSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-$objectPHPExcel = new PHPExcel();
+
 $this->title = '超级基站';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -17,7 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a(FA::icon('plus').' 新增超级基站', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(FA::icon('file-excel-o').' 导出为Excel', ['excel'], ['class' => 'btn btn-info']) ?>
+        <?= Html::a(FA::icon('file-excel-o').' 全部导出为Excel', ['excel', 'title'=>$this->title], ['class' => 'btn btn-info']) ?>
+
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -30,5 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
+        'options' => ['class' => 'table-striped table-condensed'],
+        'headerRowOptions' => ['class' => 'active'],
     ]); ?>
 </div>
